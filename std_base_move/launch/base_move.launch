@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<launch>
+
+
+<node name="sensor_collector" pkg="sensor_collector" type="base_bridge_node" output="screen"  ><!-- launch-prefix="gdb -ex run -args"-->
+     <param name="mcu_comm" value="/dev/ttyUSB0"/>
+</node>
+
+ <!--node name="laser_filter" pkg="laser_filters" type="scan_to_scan_filter_chain">
+     <rosparam command="load" file="$(find sensor_collector)/config/ScanFilter/laser_config.yaml"/>
+ </node-->
+<!--node name="tf_publisher" pkg="tf" type="static_transform_publisher" args="0 0 0.08 1.0 0 0 0 base_link base_laser 20"/-->
+<!--node name="rviz" pkg="rviz" type="rviz" args="-d $(find sensor_collector)/rviz/sensor.rviz"/-->
+<!--node name="rosbag" pkg="rosbag" type="record" args="-a"/-->
+
+</launch>
