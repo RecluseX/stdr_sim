@@ -103,23 +103,23 @@ class Node{
         ros::Time last_vt_;
         double last_cmd_vl;
         double last_cmd_vr;
-        static const double coe_1lf_v = 0.6;
+        const double coe_1lf_v = 0.6;
 
         ros::Time last_ang_t_;
         double last_ang_;
         vector<ros::Time> angular_time_;
         vector<double> angular_;
         vector<double> angular_acc_;
-        static const int max_angular_size = 7;
-        static const double acc_lim_theta = 2.5;
-        static const double period = 0.05;
+        const int max_angular_size = 7;
+        const double acc_lim_theta = 2.5;
+        const double period = 0.05;
         double acc_theta;
 
         double acc_abs_plus;
         double acc_plus;
         double angular_filter(double wz);
-        static const double max_ang_diff = 0.3;
-        static const double coe_ang_1lf = 0.7;
+        const double max_ang_diff = 0.3;
+        const double coe_ang_1lf = 0.7;
 
         int count_ = 0;
         double c_wz = 72.0 * D2R;
